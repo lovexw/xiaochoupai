@@ -22,7 +22,108 @@ document.addEventListener('DOMContentLoaded', function() {
     // 工具提示
     initTooltips();
     
+    // 新增：初始化侧边目录
+    initTOC();
+
+    // 新增：返回顶部按钮
+    initBackToTop();
+    
 });
+
+// -----------------------------------------------------------
+// 新增功能实现
+// -----------------------------------------------------------
+
+// 1. 初始化侧边目录 (TOC)
+function initTOC() {
+    const tocList = document.getElementById('tocList');
+    if (!tocList) return;
+
+    const sections = document.querySelectorAll('section[id]');
+    
+    sections.forEach(section => {
+        const id = section.id;
+        const titleEl = section.querySelector('.section-title') || section.querySelector('h2');
+        if (!titleEl) return;
+        
+        const title = titleEl.textContent;
+        
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.className = 'toc-link';
+        a.textContent = title;
+        
+        // 点击平滑滚动
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollToSection(id);
+        });
+
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+
+    // 滚动监听更新 TOC 高亮
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= (sectionTop - 300)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+// 2. 返回顶部按钮
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// 3. 反馈功能 (Global Scope)
+window.submitFeedback = function(type) {
+    const btns = document.querySelectorAll('.feedback-btn');
+    btns.forEach(b => b.classList.remove('active'));
+    
+    // 简单的视觉反馈
+    event.currentTarget.classList.add('active');
+    
+    const msg = document.getElementById('feedbackMsg');
+    if (msg) {
+        msg.style.display = 'block';
+        msg.style.opacity = '0';
+        setTimeout(() => {
+            msg.style.transition = 'opacity 0.5s';
+            msg.style.opacity = '1';
+        }, 10);
+    }
+    
+    console.log(`User feedback: ${type}`);
+}
 
 // 导航栏功能
 function initNavigation() {

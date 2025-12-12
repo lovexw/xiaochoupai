@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balatro攻略指南 - 从零开始的小丑牌大师之路</title>
-    <meta name="description" content="完整的Balatro(小丑牌)游戏攻略，从零基础到高手进阶，专业教学内容，助力全球玩家掌握这款独特的卡牌游戏。">
+    <title>Balatro攻略指南 - 从零开始的小丑牌大师之路 | 进阶策略与计算器</title>
+    <meta name="description" content="最全面的Balatro(小丑牌)中文攻略站。包含新手入门教学、全卡牌图鉴、牌型筹码计算器、Boss盲注应对策略及高分流派构建指南。助你快速精通这款Roguelike扑克游戏。">
+    <meta name="keywords" content="Balatro, 小丑牌, 攻略, 扑克Roguelike, 筹码计算, 卡牌图鉴, 游戏技巧">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://balatro-guide.com/">
+    <meta property="og:title" content="Balatro攻略指南 - 游戏机制与高分策略全解析">
+    <meta property="og:description" content="从零基础到牌神境界。完整的Balatro游戏教学、筹码计算公式详解与主流流派构建攻略。">
+    <meta property="og:image" content="https://balatro-guide.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://balatro-guide.com/">
+    <meta property="twitter:title" content="Balatro攻略指南 - 游戏机制与高分策略全解析">
+    <meta property="twitter:description" content="从零基础到牌神境界。完整的Balatro游戏教学、筹码计算公式详解与主流流派构建攻略。">
+    <meta property="twitter:image" content="https://balatro-guide.com/assets/og-image.jpg">
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
@@ -71,6 +92,14 @@
                 </div>
             </div>
         </section>
+
+        <!-- 侧边目录 (Desktop only) -->
+        <aside class="toc-sidebar" id="tocSidebar">
+            <h3>目录导航</h3>
+            <ul class="toc-list" id="tocList">
+                <!-- JS will populate this -->
+            </ul>
+        </aside>
 
         <!-- 基础入门部分 -->
         <section id="basics" class="content-section">
@@ -581,6 +610,34 @@
                     <p class="section-subtitle">从新手到高手的完整策略体系</p>
                 </div>
 
+                <!-- 实战场景模拟 (Visual Context) -->
+                <div class="scenario-card">
+                    <div class="scenario-header">
+                        <h4><i class="fas fa-chess-board"></i> 实战场景演练</h4>
+                        <span class="scenario-badge">新手必看</span>
+                    </div>
+                    <div class="scenario-body">
+                        <div class="scenario-visual">
+                            <div class="hand-preview">
+                                <div class="mini-card red">K♥</div>
+                                <div class="mini-card red">K♦</div>
+                                <div class="mini-card">9♠</div>
+                                <div class="mini-card">9♣</div>
+                                <div class="mini-card red">7♥</div>
+                            </div>
+                            <p style="color:white; margin-top:1rem; font-size:0.9rem;">当前盲注目标: 300筹码</p>
+                        </div>
+                        <div class="scenario-text">
+                            <h4>你会怎么做？</h4>
+                            <p>手牌中有两对 (KK + 99)。这是一个稳定的基础牌型。</p>
+                            <div class="decision-point">
+                                <p><strong>最优策略：</strong>弃掉单张7♥，保留两对打出。</p>
+                                <p style="font-size:0.9rem; color:#666; margin-top:0.5rem;">理由：两对的基础筹码是20，加上牌面分 (10+10+9+9) = 38。总计 20x2 + 38 = 78 (未计算倍率)。这比拆开去找三条更稳健。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="strategy-skill-tree">
                     <div class="skill-level" data-level="beginner">
                         <div class="level-header">
@@ -1045,6 +1102,19 @@
                 </div>
             </div>
         </section>
+        <!-- 互动反馈区 -->
+        <div class="feedback-section">
+            <h4>这篇攻略对你有帮助吗？</h4>
+            <div class="feedback-buttons">
+                <button class="feedback-btn" onclick="submitFeedback('yes')">
+                    <i class="fas fa-thumbs-up"></i> 有帮助
+                </button>
+                <button class="feedback-btn" onclick="submitFeedback('no')">
+                    <i class="fas fa-thumbs-down"></i> 一般般
+                </button>
+            </div>
+            <p id="feedbackMsg" style="display:none; margin-top:1rem; color:var(--accent-gold);">感谢您的反馈！我们会持续改进。</p>
+        </div>
     </main>
 
     <!-- 页脚 -->
