@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balatro计算器 - 筹码与倍数计算工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-masks-theater"></i>
+                <span>Balatro Guide</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">主站</a>
+                <a href="calculator.html" class="nav-link active">计算器</a>
+                <a href="combos.html" class="nav-link">组合指南</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="calculator-page">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Balatro 计算器</h1>
+                <p class="section-subtitle">精确计算你的手牌收益，优化游戏策略</p>
+            </div>
+
+            <div class="calculator-grid">
+                <!-- 筹码计算器 -->
+                <div class="calculator-section">
+                    <div class="section-header-small">
+                        <h2><i class="fas fa-calculator"></i> 筹码计算器</h2>
+                        <p>计算你的手牌基础筹码价值</p>
+                    </div>
+                    
+                    <div class="calculator-card">
+                        <div class="input-group">
+                            <label for="hand-type">选择牌型:</label>
+                            <select id="hand-type" class="form-select">
+                                <option value="">请选择牌型</option>
+                                <option value="high-card">高牌 (5筹码)</option>
+                                <option value="pair">一对 (10筹码)</option>
+                                <option value="two-pair">两对 (20筹码)</option>
+                                <option value="three-kind">三条 (30筹码)</option>
+                                <option value="straight">顺子 (30筹码)</option>
+                                <option value="flush">同花 (35筹码)</option>
+                                <option value="full-house">满堂彩 (40筹码)</option>
+                                <option value="four-kind">四条 (60筹码)</option>
+                                <option value="straight-flush">同花顺 (100筹码)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="hand-count">牌型使用次数:</label>
+                            <input type="number" id="hand-count" min="1" value="1" class="form-input">
+                        </div>
+                        
+                        <div class="result-box">
+                            <div class="result-label">基础筹码总计:</div>
+                            <div class="result-value" id="base-chips">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 倍数计算器 -->
+                <div class="calculator-section">
+                    <div class="section-header-small">
+                        <h2><i class="fas fa-times"></i> 倍数计算器</h2>
+                        <p>计算你的手牌倍数加成</p>
+                    </div>
+                    
+                    <div class="calculator-card">
+                        <div class="input-group">
+                            <label for="card-mult">基础卡牌倍数:</label>
+                            <input type="number" id="card-mult" min="0" step="0.1" value="1" class="form-input">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="joker-mult">小丑牌倍数:</label>
+                            <input type="number" id="joker-mult" min="0" step="0.1" value="1" class="form-input">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="other-mult">其他加成倍数:</label>
+                            <input type="number" id="other-mult" min="0" step="0.1" value="1" class="form-input">
+                        </div>
+                        
+                        <div class="result-box">
+                            <div class="result-label">总倍数:</div>
+                            <div class="result-value" id="total-mult">1</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 总收益计算器 -->
+                <div class="calculator-section full-width">
+                    <div class="section-header-small">
+                        <h2><i class="fas fa-chart-line"></i> 总收益计算器</h2>
+                        <p>综合计算你的总收益</p>
+                    </div>
+                    
+                    <div class="calculator-card">
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span class="result-label">基础筹码:</span>
+                                <span class="result-value" id="final-chips">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">总倍数:</span>
+                                <span class="result-value" id="final-mult">1x</span>
+                            </div>
+                            <div class="result-divider"></div>
+                            <div class="result-item total">
+                                <span class="result-label">最终收益:</span>
+                                <span class="result-value highlight" id="final-score">0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-section">
+                            <h4>与盲注要求对比</h4>
+                            <div class="input-group">
+                                <label for="blind-requirement">盲注要求筹码:</label>
+                                <input type="number" id="blind-requirement" min="0" value="1000" class="form-input">
+                            </div>
+                            <div class="result-comparison" id="blind-comparison">
+                                <span class="comparison-label">当前收益 vs 盲注要求:</span>
+                                <span class="comparison-value">请先计算收益</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 常用牌型组合展示 -->
+            <div class="combos-reference">
+                <div class="section-header-small">
+                    <h2><i class="fas fa-lightbulb"></i> 常用牌型收益参考</h2>
+                    <p>了解不同牌型的基准收益</p>
+                </div>
+                
+                <div class="combos-grid">
+                    <div class="combo-card">
+                        <div class="combo-visual">A K Q J 10</div>
+                        <h4>皇家同花顺</h4>
+                        <div class="combo-stats">
+                            <span>基础: 100筹码</span>
+                            <span>推荐倍数: 4x+</span>
+                        </div>
+                        <div class="combo-score">预期收益: 400+</div>
+                    </div>
+                    
+                    <div class="combo-card">
+                        <div class="combo-visual">A A A K K</div>
+                        <h4>满堂彩</h4>
+                        <div class="combo-stats">
+                            <span>基础: 40筹码</span>
+                            <span>推荐倍数: 3x+</span>
+                        </div>
+                        <div class="combo-score">预期收益: 120+</div>
+                    </div>
+                    
+                    <div class="combo-card">
+                        <div class="combo-visual">9 10 J Q K</div>
+                        <h4>顺子</h4>
+                        <div class="combo-stats">
+                            <span>基础: 30筹码</span>
+                            <span>推荐倍数: 3x+</span>
+                        </div>
+                        <div class="combo-score">预期收益: 90+</div>
+                    </div>
+                    
+                    <div class="combo-card">
+                        <div class="combo-visual">A♠ A♥ A♦ A♣</div>
+                        <h4>四条</h4>
+                        <div class="combo-stats">
+                            <span>基础: 60筹码</span>
+                            <span>推荐倍数: 3x+</span>
+                        </div>
+                        <div class="combo-score">预期收益: 180+</div>
+                    </div>
+                    
+                    <div class="combo-card">
+                        <div class="combo-visual">K♥ K♦ K♣ K♠</div>
+                        <h4>四条K</h4>
+                        <div class="combo-stats">
+                            <span>基础: 60筹码</span>
+                            <span>推荐倍数: 3x+</span>
+                        </div>
+                        <div class="combo-score">预期收益: 180+</div>
+                    </div>
+                    
+                    <div class="combo-card">
+                        <div class="combo-visual">7♠ 7♥ 7♦</div>
+                        <h4>三条</h4>
+                        <div class="combo-stats">
+                            <span>基础: 30筹码</span>
+                            <span>推荐倍数: 2x+</span>
+                        </div>
+                        <div class="combo-score">预期收益: 60+</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 策略建议 -->
+            <div class="strategy-tips">
+                <div class="section-header-small">
+                    <h2><i class="fas fa-chess"></i> 计算策略建议</h2>
+                </div>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🎯</div>
+                        <h4>目标设定</h4>
+                        <p>根据盲注要求设定你的收益目标。通常需要超过盲注要求20-30%的安全边际。</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">⚖️</div>
+                        <h4>平衡发展</h4>
+                        <p>不要只专注筹码或倍数。理想情况下，筹码和倍数应该协同发展。</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">🔄</div>
+                        <h4>连锁效应</h4>
+                        <p>寻找能够触发连锁反应的小丑牌组合，实现指数级收益增长。</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">📊</div>
+                        <h4>数据分析</h4>
+                        <p>记录你的收益模式，找出最适合你的牌型和小丑牌组合。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>

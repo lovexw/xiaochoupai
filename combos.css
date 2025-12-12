@@ -1,0 +1,728 @@
+/* 组合指南页面专用样式 */
+.combos-page {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* 特色组合展示 */
+.featured-combos {
+    margin-bottom: 4rem;
+}
+
+.section-header-small {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header-small h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.section-header-small h2 i {
+    color: var(--accent-color);
+}
+
+.section-header-small p {
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* 特色组合横幅 */
+.combo-showcase {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.featured-combo {
+    text-align: center;
+}
+
+.combo-banner {
+    margin-bottom: 3rem;
+}
+
+.combo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.combo-title h3 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 2rem;
+}
+
+.combo-tier {
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-gold));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.combo-description p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* 组合卡牌展示 */
+.combo-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.card-slot {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    min-width: 150px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.card-slot:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card-slot h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.card-slot p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.combo-arrow {
+    font-size: 2rem;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* 组合统计 */
+.combo-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-item {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 215, 0, 0.1));
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.stat-label {
+    display: block;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* 分类筛选 */
+.combo-categories {
+    margin-bottom: 4rem;
+}
+
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    color: var(--accent-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* 组合网格 */
+.combos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.combo-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.combo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-hover);
+}
+
+.combo-card.hidden {
+    display: none;
+}
+
+.combo-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.combo-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.combo-difficulty {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.combo-body {
+    padding: 2rem;
+}
+
+.combo-overview {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.card-list,
+.strategy-steps {
+    margin-bottom: 1.5rem;
+}
+
+.card-list h4,
+.strategy-steps h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.mini-card {
+    background: rgba(233, 69, 96, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+.strategy-steps ol {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.strategy-steps li {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.boss-target {
+    margin-bottom: 1.5rem;
+}
+
+.boss-target h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.boss-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.boss-type {
+    background: rgba(255, 193, 7, 0.1);
+    color: #856404;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.combo-footer {
+    padding: 1.5rem 2rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.performance {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.performance:last-child {
+    margin-bottom: 0;
+}
+
+.performance-label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.performance-bar {
+    width: 100px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.performance-fill {
+    height: 100%;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-gold));
+    transition: width 0.5s ease;
+}
+
+.performance-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 30px;
+    text-align: right;
+}
+
+/* 组合构建工具 */
+.combo-builder {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.builder-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.tool-section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.tool-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 卡牌选择器 */
+.compatibility-checker {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-select {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius-small);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-small);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #d63384;
+    transform: translateY(-2px);
+}
+
+/* 构建器卡片展示 */
+.builder-cards h4,
+.combo-analysis h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.cards-container {
+    min-height: 100px;
+    border: 2px dashed #e0e0e0;
+    border-radius: var(--border-radius-small);
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.cards-container.has-cards {
+    border-style: solid;
+    border-color: var(--accent-color);
+    background: rgba(233, 69, 96, 0.02);
+}
+
+.empty-state {
+    color: var(--text-gray);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.builder-card {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.builder-card button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    margin-left: 0.5rem;
+}
+
+.builder-card button:hover {
+    color: #ffc107;
+}
+
+/* 组合分析 */
+.analysis-result {
+    background: rgba(0, 0, 0, 0.02);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-small);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--text-gray);
+    text-align: center;
+    font-style: italic;
+}
+
+.analysis-result.has-analysis {
+    text-align: left;
+    color: var(--text-dark);
+    font-style: normal;
+}
+
+/* 评分系统 */
+.scoring-system {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.score-category {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.score-category h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    min-width: 80px;
+}
+
+.score-bar {
+    flex: 1;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.score-fill {
+    height: 100%;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-gold));
+    transition: width 0.5s ease;
+}
+
+.score-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 30px;
+    text-align: right;
+}
+
+.total-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 215, 0, 0.1));
+    border-radius: var(--border-radius-small);
+    border: 2px solid var(--accent-color);
+    margin-top: 1rem;
+}
+
+.total-score span:first-child {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.total-score-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 动画效果 */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.combo-card.animate {
+    animation: slideInUp 0.5s ease;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .combos-page {
+        padding: 6rem 0 2rem;
+    }
+    
+    .combo-showcase {
+        padding: 2rem;
+    }
+    
+    .combo-cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .card-slot {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .combo-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .combos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .builder-tools {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .tool-section {
+        padding: 1.5rem;
+    }
+    
+    .category-filter {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .combo-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .cards-row {
+        flex-direction: column;
+    }
+    
+    .boss-types {
+        flex-direction: column;
+    }
+    
+    .performance {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .performance-bar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .combo-showcase {
+        padding: 1.5rem;
+    }
+    
+    .combo-banner {
+        margin-bottom: 2rem;
+    }
+    
+    .combo-title {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .combo-title h3 {
+        font-size: 1.5rem;
+    }
+    
+    .combo-body {
+        padding: 1.5rem;
+    }
+    
+    .combo-footer {
+        padding: 1rem 1.5rem;
+    }
+    
+    .combo-builder {
+        padding: 2rem;
+    }
+    
+    .score-category {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .score-category h4 {
+        min-width: auto;
+    }
+}
