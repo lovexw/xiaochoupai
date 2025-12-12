@@ -1,0 +1,429 @@
+/* 计算器页面专用样式 */
+.calculator-page {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.calculator-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calculator-section.full-width {
+    grid-column: 1 / -1;
+}
+
+.section-header-small {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header-small h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.section-header-small h2 i {
+    color: var(--accent-color);
+}
+
+.section-header-small p {
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* 表单元素 */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-select,
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius-small);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: white;
+}
+
+.form-select:focus,
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+}
+
+.form-input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.form-input::-webkit-outer-spin-button,
+.form-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* 结果显示 */
+.result-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.result-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 总计算器结果 */
+.calculator-results {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.result-item:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.result-item.total {
+    background: rgba(233, 69, 96, 0.1);
+    margin: 1rem -1rem;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--accent-color);
+}
+
+.result-item.total .result-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.result-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    margin: 1rem 0;
+}
+
+.result-value.highlight {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 比较部分 */
+.comparison-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+}
+
+.comparison-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.result-comparison {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius-small);
+    font-weight: 600;
+}
+
+.result-comparison.success {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+
+.result-comparison.warning {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border: 2px solid #ffc107;
+}
+
+.result-comparison.danger {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 2px solid #dc3545;
+}
+
+/* 组合参考 */
+.combos-reference {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.combos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.combo-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.combo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-hover);
+}
+
+.combo-visual {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px solid var(--text-gray);
+    border-radius: var(--border-radius-small);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.combo-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.combo-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.combo-stats span {
+    background: rgba(233, 69, 96, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.combo-score {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 策略建议 */
+.strategy-tips {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tip-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.tip-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tip-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tip-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 动画效果 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.result-value.updated {
+    animation: pulse 0.5s ease;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .calculator-page {
+        padding: 6rem 0 2rem;
+    }
+    
+    .calculator-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .calculator-section {
+        padding: 1.5rem;
+    }
+    
+    .combos-reference,
+    .strategy-tips {
+        padding: 2rem;
+    }
+    
+    .combos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .result-comparison {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .result-value {
+        font-size: 1.5rem;
+    }
+    
+    .result-value.highlight {
+        font-size: 2rem;
+    }
+    
+    .combo-visual {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+    
+    .calculator-section,
+    .combos-reference,
+    .strategy-tips {
+        padding: 1.5rem;
+    }
+}
+
+/* 深色主题支持（预留） */
+@media (prefers-color-scheme: dark) {
+    .calculator-page {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    
+    .calculator-section,
+    .combos-reference,
+    .strategy-tips {
+        background: rgba(22, 33, 62, 0.95);
+        color: var(--text-light);
+    }
+    
+    .combo-card,
+    .tip-card {
+        background: rgba(26, 26, 46, 0.8);
+        color: var(--text-light);
+    }
+    
+    .form-select,
+    .form-input {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: var(--text-light);
+    }
+    
+    .form-select:focus,
+    .form-input:focus {
+        border-color: var(--accent-gold);
+        box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+    }
+}
