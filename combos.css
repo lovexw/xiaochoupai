@@ -63,6 +63,7 @@
     color: var(--primary-color);
     margin: 0;
     font-size: 2rem;
+    line-height: 1.3;
 }
 
 .combo-tier {
@@ -78,6 +79,7 @@
     color: var(--text-gray);
     font-size: 1.1rem;
     margin: 0;
+    line-height: 1.7;
 }
 
 /* 组合卡牌展示 */
@@ -114,7 +116,7 @@
 
 .card-slot h4 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-size: 1rem;
 }
 
@@ -122,6 +124,7 @@
     color: var(--text-gray);
     font-size: 0.9rem;
     margin: 0;
+    line-height: 1.5;
 }
 
 .combo-arrow {
@@ -251,34 +254,34 @@
 
 .combo-overview {
     color: var(--text-gray);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: 2rem;
+    line-height: 1.8;
 }
 
 .card-list,
 .strategy-steps {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .card-list h4,
 .strategy-steps h4 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .cards-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .mini-card {
     background: rgba(233, 69, 96, 0.1);
     color: var(--accent-color);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
     border: 1px solid rgba(233, 69, 96, 0.2);
 }
@@ -290,32 +293,37 @@
 
 .strategy-steps li {
     color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    padding-left: 0.5rem;
+}
+
+.strategy-steps li:last-child {
+    margin-bottom: 0;
 }
 
 .boss-target {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .boss-target h4 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .boss-types {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .boss-type {
     background: rgba(255, 193, 7, 0.1);
     color: #856404;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
     border: 1px solid rgba(255, 193, 7, 0.2);
 }
